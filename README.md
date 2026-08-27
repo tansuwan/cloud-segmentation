@@ -77,8 +77,8 @@ pip install -e .
 ### 1. Clone this repository
 
 ```bash
-git clone <this-repo-url>
-cd <this-repo>
+git clone https://github.com/tansuwan/cloud-segmentation.git
+cd cloud-segmentation
 ```
 
 ### 2. Download the actual dataset (not included in this repo)
