@@ -108,6 +108,20 @@ After downloading and extracting, place the folders so that your project directo
 └── outputs/
 ```
 
+> ⚠️ **Note on `training_patches_38-cloud_nonempty.csv`:** If you clone or download this file directly from the official [38-Cloud GitHub repository](https://github.com/SorourMo/38-Cloud-A-Cloud-Segmentation-Dataset), it will **not** be placed inside `38-Cloud_training/` — it will end up elsewhere in the folder you cloned into. `dataset.py` expects it to live inside `38-Cloud_training/` alongside the other CSV files. You have two options:
+> 1. **Move the file** into `38-Cloud_training/` manually after cloning, or
+> 2. **Skip this file entirely** and use the self-computed filter instead, by changing the `filter_source` argument in `dataset.py`:
+>    ```python
+>    patch_names = load_patch_list("official")   # requires training_patches_38-cloud_nonempty.csv
+>    # change to:
+>    patch_names = load_patch_list("custom")     # computes the informative-pixel ratio itself,
+>                                                  # no external filter file needed
+>    ```
+>    The `"custom"` option filters patches based on a self-computed informative-pixel ratio
+>    (threshold configurable in `fit_normalization_stats`/`load_patch_list`) and does not
+>    depend on any file from the official GitHub repository — see `REPORT.md` for a
+>    comparison between the two filtering approaches.
+
 ### 3. Set the project root environment variable
 
 To avoid hardcoded paths, all scripts read the project location from an environment variable, `CLOUD_PROJECT_ROOT`. Set it to the folder containing `38-Cloud_training/` before running anything:
