@@ -1,0 +1,8 @@
+torch==2.5.1+cu121
+torchvision==0.20.1+cu121
+numpy==2.2.6
+pandas==2.3.3
+rasterio==1.4.4
+matplotlib==3.10.9
+jupyter==1.1.1
+ipykernel==7.3.0

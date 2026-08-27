@@ -1,0 +1,13 @@
+# ข้อมูลดิบ (ห้าม commit ตามที่ README กำหนด)
+38-Cloud_training/
+38-Cloud_test/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Jupyter checkpoint
+.ipynb_checkpoints/
+
+# Editor settings เฉพาะเครื่อง
+.vscode/
